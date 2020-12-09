@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Justin Cheese"
+        "name": "Update Project"
     },
     {
         "id": 2,
@@ -10,5 +10,13 @@
     {
         "id": 3,
         "name": "Swiss chard"
+    },
+    {
+        "id": 4,
+        "name": "Erin"
+    },
+    {
+        "id": 5,
+        "name": "Test"
     }
 ]

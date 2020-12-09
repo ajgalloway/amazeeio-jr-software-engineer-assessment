@@ -38,12 +38,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
+        {/* <p>
           Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        </p> */}
 
         {/* Here we print the value of the returned API query to the page */}        
-        <p>Hello {hello}</p>
+        {/* <p>Hello {hello}</p> */}
         <Projects />
       </header>
     </div>

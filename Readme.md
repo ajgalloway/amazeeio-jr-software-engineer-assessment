@@ -115,6 +115,20 @@ RETURNS
 
 ```
 
+```
+query name {
+  name
+}
+```
+RETURNS
+```
+{
+  "data": {
+    "name": "Andrew Galloway"
+  }
+}
+```
+
 ---
 
 
@@ -131,7 +145,7 @@ RETURNS
   "data": {
     "addProject": {
       "id": 4,
-      "name": "NEW FUN PROJECT"
+      "name": "Erin"
     }
   }
 }
@@ -145,6 +159,17 @@ TODO: This mutation needs to be completed.
 mutation updateProject {
   updateProject(patch:{id:1, name:"HELLO"}){
     id, name
+  }
+}
+```
+RETURNS
+```
+{
+  "data": {
+    "updateProject": {
+      "id": 1,
+      "name": "HELLO"
+    }
   }
 }
 ```

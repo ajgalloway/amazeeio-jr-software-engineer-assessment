@@ -1,4 +1,5 @@
 import { hello } from "./model/hello";
+import { name } from "./model/name";
 import { allProjects, addProject, updateProject, Project } from "./model/project";
 
 type ProjectArgsType = { project: any };
@@ -11,6 +12,7 @@ export const resolvers: any = {
   },
   Query: {
     hello,
+    name,
     allProjects: (root: any, args: ProjectArgsType) => allProjects()
   }
 }

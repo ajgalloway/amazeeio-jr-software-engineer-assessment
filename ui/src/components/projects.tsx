@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
+import '../styles/projects.css';
 
 
 const allProjects = gql`
@@ -13,18 +14,32 @@ const allProjects = gql`
 
 function Projects() {
 
-  /*
+  const {loading, error, data} = useQuery(allProjects);
 
-      Use similar query syntax to the hello query in the App.tsx file to get the list of projects from that API.
-      Reference: https://www.apollographql.com/docs/react/get-started/#request-data
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :</p>;
 
-  */
+  let projects = data.allProjects;
 
   return (
     <div className="Projects">
-
-      TODO: List out the projects here
-
+      <p className="projects-title">Projects</p>
+      <table>
+        <thead>
+          <tr className="projects-header-tr">
+            <th>ID</th>
+            <th>NAME</th>
+          </tr>
+        </thead>
+        <tbody>
+        {projects.map((project:any) => (
+        <tr key={project.id}>
+          <td>{project.id}</td>
+          <td>{project.name}</td>
+        </tr>
+      ))}
+        </tbody>
+      </table>
     </div>
   );
 }

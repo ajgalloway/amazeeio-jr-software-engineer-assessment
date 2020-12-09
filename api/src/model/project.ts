@@ -12,22 +12,23 @@ export const allProjects = () => {
   return readData() as Projects;
 }
 
-export const addProject = ({ project: { name } }: {project: Project}) => {
+export const addProject = async ({ project: { name } }: {project: Project}) => {
   const data = readData() as Projects;
   const id = data.length + 1;
-  writeData([...data, { id, name }]);
+  await writeData([...data, { id, name }]);
   return { id , name };
 }
 
-export const updateProject = ({patch: { id, name }}: { patch: Project}) => {
+export const updateProject = async ({patch: { id, name }}: { patch: Project}) => {
   const data = readData() as Projects;
 
-  // TODO: 
-  // iterate through the projects array using a loop, 
-  // find the object to update
-  // apply the patch changes
-  // save this modified array back to the json file
-  // 
-  // example of returning a mock project 
-  // return { id: 0, name: 'HELLO' };
+  data.map((project,i) => {
+    if (project.id == id) {
+      data.splice(i,1,{id: id, name: name});
+    }
+  });
+
+  await writeData(data);
+  
+  return {id: id, name: name};
 }

@@ -8,6 +8,7 @@ export const typeDefs = gql`
 
   type Query {
     hello: String
+    name: String
     allProjects: [Project]
   }
 

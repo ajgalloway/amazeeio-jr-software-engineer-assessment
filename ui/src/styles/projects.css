@@ -1,0 +1,16 @@
+.projects-title {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+table {
+  border-spacing: 20px 5px;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  text-align: left;
+}
